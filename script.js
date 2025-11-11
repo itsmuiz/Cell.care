@@ -24,3 +24,10 @@ VanillaTilt.init(document.querySelectorAll(".tilt"), {
     max: 25,
     speed: 400
 });
+
+function orderOnWhatsApp(productName, price) {
+  const phoneNumber = "919876543210"; // <-- replace with your actual WhatsApp number (country code + number)
+  const message = `Hello! I'm interested in purchasing the ${productName} (${price}). Please provide more details.`;
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+}

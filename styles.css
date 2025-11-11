@@ -337,13 +337,17 @@ body {
 /* Product Container - Responsive Grid */
 .products-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 2fr));
     gap: 20px;
     justify-content: center;
 }
 
 /* Product Card */
 .product-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
     background: #0d1117;
     padding: 20px;
     border-radius: 12px;
@@ -1032,4 +1036,134 @@ body {
     .social-icons {
         justify-content: center;
     }
+}
+/* ======= Products Page Styling ======= */
+.products-page {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--light-color);
+}
+
+.product-controls {
+  margin: 20px 0 40px;
+}
+
+#searchBar {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,162,255,0.4);
+  background: #0d1117;
+  color: var(--light-color);
+  font-size: 1rem;
+}
+
+#searchBar:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0,162,255,0.4);
+}
+
+/* Active Nav Link */
+.active-link {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* Add Product Button */
+.add-product-btn {
+  background: linear-gradient(90deg, #00a2ff, #a1c6ea);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-left: 10px;
+}
+
+.add-product-btn:hover {
+  box-shadow: 2px 5px 15px rgba(0, 162, 255, 0.3);
+  background: transparent;
+  color: #00a2ff;
+  border: 2px solid #00a2ff;
+}
+
+/* Add Product Form */
+.add-product-form {
+  background: #0d1117;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.2);
+  margin: 20px auto;
+  max-width: 500px;
+  text-align: left;
+}
+
+.add-product-form h3 {
+  color: var(--light-color);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.add-product-form input,
+.add-product-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 162, 255, 0.3);
+  background: #04080f;
+  color: var(--light-color);
+  font-size: 1rem;
+}
+
+.add-product-form input:focus,
+.add-product-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 162, 255, 0.4);
+}
+
+.add-product-form button {
+  background: linear-gradient(90deg, #00a2ff, #a1c6ea);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-right: 10px;
+}
+
+.add-product-form button:hover {
+  opacity: 0.8;
+}
+
+.add-product-form #cancelAdd {
+  background: transparent;
+  color: var(--light-color);
+  border: 2px solid var(--light-color);
+}
+
+.add-product-form #cancelAdd:hover {
+  background: var(--light-color);
+  color: #04080f;
+}
+
+.product-footer{
+    padding-top: 10px;
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.product-footer button{
+    border:  none;
+    border-radius: 5px;
+    background-color: #25D366;
+    padding: 5px 5px;
 }
