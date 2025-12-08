@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | Cell Care India</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="checkout.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-battery-empty"></i><strong>Cell Care</strong> <span>India</span>
+    </div>
+
+    <i class="fa-solid fa-bars hamburger"></i>
+
+    <div class="sidebar">
+      <i class="fa-solid fa-times close-menu"></i>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="checkout-page">
+    <header class="checkout-header">
+      <h1>Checkout information</h1>
+      <p>Enter your details and confirm before sending on WhatsApp.</p>
+    </header>
+
+    <section class="checkout-layout">
+      <!-- Left: form -->
+      <form id="checkoutForm" class="checkout-form" novalidate>
+        <div class="form-group">
+          <label for="custName">Name *</label>
+          <input id="custName" type="text" required />
+        </div>
+
+        <div class="form-group">
+          <label for="custPhone">Phone number *</label>
+          <input
+            id="custPhone"
+            type="tel"
+            required
+            inputmode="tel"
+            placeholder="10-digit mobile (with or without +91 / 0)"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="custEmail">Email (optional)</label>
+          <input id="custEmail" type="email" placeholder="you@example.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="custAddress">Full address *</label>
+          <textarea id="custAddress" rows="3" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="custPincode">Pincode *</label>
+          <input
+            id="custPincode"
+            type="text"
+            required
+            inputmode="numeric"
+            maxlength="6"
+            placeholder="6-digit pincode"
+          />
+        </div>
+
+        <label class="confirm-row">
+          <input type="checkbox" id="confirmCheck" />
+          <span>I have cross-checked all details and they are correct.</span>
+        </label>
+
+        <button type="submit" class="checkout-submit-btn">
+          Confirm &amp; send on WhatsApp
+        </button>
+
+        <p id="checkoutError" class="checkout-error"></p>
+      </form>
+
+      <!-- Right: cart summary -->
+      <section class="checkout-summary">
+        <h2>Your items</h2>
+        <div id="summaryItems" class="summary-items"></div>
+
+        <div class="summary-footer">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="summarySubtotal">₹0</span>
+          </div>
+          <button
+            type="button"
+            class="summary-edit-btn"
+            onclick="window.location.href='products.html';"
+          >
+            Edit items
+          </button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>© 2025 Cell Care India. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="vanilla-tilt.js"></script>
+  <script src="script.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>

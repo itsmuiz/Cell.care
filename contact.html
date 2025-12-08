@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Contact Us | Cell Care India</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div class="electric-cursor"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-battery-empty"></i><strong>Cell Care</strong> <span>India</span>
+        </div>
+
+        <i class="fa-solid fa-bars hamburger"></i>
+
+        <div class="sidebar">
+            <i class="fa-solid fa-times close-menu"></i>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div style="margin-top: 100px;"></div>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact-section">
+        <div class="contact-container">
+            <div class="contact-form">
+                <center><h2>Get In Touch</h2></center>
+                <p>Have questions? We'd love to hear from you.</p>
+
+                <form id="site-contact-form">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+
+                    <label for="email">Email or Phone</label>
+                    <input type="text" id="email" placeholder="example@mail.com or +91XXXXXXXXXX" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Your message here..." required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <div class="battery-box tilt">
+                <div class="battery">
+                    <div class="battery-level"></div>
+                    <div class="thunder">&#9889;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h2><i class="fas fa-battery-full"></i> CELL CARE INDIA</h2>
+                <p>Providing top-notch EV batteries, spare parts, and services.</p>
+                <div class="social-icons">
+                    <a class="social-facebook" href="#"><i class="fab fa-facebook"></i></a> 
+                    <a class="social-twitter" href="#"><i class="fab fa-twitter"></i></a>   
+                    <a class="social-instagram" href="#"><i class="fab fa-instagram"></i></a> 
+                    <a class="social-linkedin" href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h3>Get In Touch</h3>
+                <p><i class="fas fa-map-marker-alt"></i> <span id="footer-address">New Delhi, India</span></p>
+                <p><i class="fas fa-phone"></i> <span id="footer-phone">+91 XXXXXXXXXX</span></p>
+                <p><i class="fas fa-envelope"></i> <span id="footer-email">info@youremail.com</span></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Cell Care India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="./vanilla-tilt.js"></script>
+    <script src="script.js"></script>
+
+    <!-- BACKEND-INTEGRATION -->
+<script>
+  (function () {
+    const API_BASE = window.API_BASE || "https://artifyscreens.pythonanywhere.com";
+
+    async function loadConfig() {
+      try {
+        const res = await fetch(API_BASE + "/api/config/");
+        if (!res.ok) return;
+        const data = await res.json();
+        if (document.getElementById("footer-email")) document.getElementById("footer-email").textContent = data.contact_email || data.site_email || "info@cellcareindia.com";
+        if (document.getElementById("footer-phone")) document.getElementById("footer-phone").textContent = data.whatsapp_number || data.whatsapp_phone || "+91 9876543210";
+        if (document.getElementById("footer-address")) document.getElementById("footer-address").textContent = data.address || "New Delhi";
+        if (data.facebook && document.querySelector(".social-facebook")) document.querySelector(".social-facebook").href = data.facebook;
+        if (data.twitter && document.querySelector(".social-twitter")) document.querySelector(".social-twitter").href = data.twitter;
+        if (data.instagram && document.querySelector(".social-instagram")) document.querySelector(".social-instagram").href = data.instagram;
+        if (data.linkedin && document.querySelector(".social-linkedin")) document.querySelector(".social-linkedin").href = data.linkedin;
+      } catch (e) {
+        console.warn("Config load error", e);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      loadConfig();
+
+      const contactForm = document.getElementById("site-contact-form");
+      if (!contactForm) return;
+
+      contactForm.addEventListener("submit", async function (ev) {
+        ev.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+        if (!name || !email || !message) {
+          alert("Please fill all fields.");
+          return;
+        }
+
+        try {
+          const res = await fetch(API_BASE + "/api/contact/", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, message })
+          });
+          if (res.ok) {
+            alert("Message sent. Thank you!");
+            contactForm.reset();
+          } else {
+            const json = await res.json().catch(()=>null);
+            alert("Could not send message: " + (json && json.error ? json.error : res.statusText));
+          }
+        } catch (e) {
+          alert("Network error while sending message.");
+          console.error(e);
+        }
+      });
+    });
+  })();
+</script> 
+</body>
+</html>
+

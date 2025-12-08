@@ -4,65 +4,103 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Products | Cell Care India</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Icons & global styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Products page styles -->
+  <link rel="stylesheet" href="products.css" />
 </head>
 
 <body>
-  <!-- Navigation -->
+  <!-- NAVBAR (same as before) -->
   <nav class="navbar">
     <div class="logo">
       <i class="fa-solid fa-battery-empty"></i><strong>Cell Care</strong> <span>India</span>
     </div>
+
     <i class="fa-solid fa-bars hamburger"></i>
+
     <div class="sidebar">
       <i class="fa-solid fa-times close-menu"></i>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="products.html" class="active-link">Products</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- ======= Products Page Section ======= -->
-  <section class="products-page">
-    <h2 class="section-title">Our Product Range</h2>
-    <p class="section-subtitle">High-quality spare parts and batteries for all your needs.</p>
+  <!-- MAIN PRODUCTS PAGE -->
+  <main class="products-page">
+    <header class="products-header">
+      <h1 class="section-title">Our Product Range</h1>
+      <p class="section-subtitle">Premium batteries and EV components for every need.</p>
+    </header>
 
-    <!-- Search and Filters -->
-    <div class="product-controls">
-      <input type="text" id="searchBar" placeholder="Search products..." />
-      <button id="addProductBtn" class="add-product-btn">Add New Product</button>
+    <!-- Filters -->
+    <section class="product-controls">
+      <select id="categorySelect" class="category-select">
+        <option value="">All Categories</option>
+      </select>
+
+      <div class="search-wrap">
+        <input
+          type="text"
+          id="searchBar"
+          class="search-bar"
+          placeholder="Search products..."
+        />
+      </div>
+    </section>
+
+    <!-- Products list (will be filled by JS) -->
+    <section id="productsGrid" class="products-grid"></section>
+
+    <!-- Pagination -->
+    <nav id="pagination" class="pagination"></nav>
+
+    <!-- Sticky bottom cart bar -->
+    <div id="cartBar" class="cart-bar cart-hidden">
+      <button id="cartBarButton" class="cart-bar-btn">
+        <span id="cartCount">0</span> items | Subtotal
+        <span id="cartTotal">₹0</span>
+      </button>
     </div>
 
-    <!-- Add Product Form (Hidden by default) -->
-    <div id="addProductForm" class="add-product-form" style="display: none;">
-      <h3>Add New Product</h3>
-      <input type="text" id="productName" placeholder="Product Name" required />
-      <input type="text" id="productPrice" placeholder="Price (e.g., ₹1,999)" required />
-      <textarea id="productDesc" placeholder="Description" required></textarea>
-      <input type="text" id="productIcon" placeholder="Icon Class (e.g., fa-battery-full)" required />
-      <button id="submitProduct">Add Product</button>
-      <button id="cancelAdd">Cancel</button>
-    </div>
+    <!-- Slide-up quote drawer -->
+    <aside id="cartDrawer" class="cart-drawer cart-hidden">
+      <div class="cart-drawer-panel">
+        <header class="cart-drawer-header">
+          <h2>Quote</h2>
+          <button id="cartDrawerClose" class="cart-close">&times;</button>
+        </header>
 
-    <!-- Products Grid -->
-    <div id="productsContainer" class="products-container"></div>
-  </section>
+        <div id="cartItems" class="cart-items"></div>
 
-  <!-- ======= Footer ======= -->
+        <footer class="cart-drawer-footer">
+          <div class="cart-subtotal-row">
+            <span id="cartSubtotalText">Subtotal (0 items)</span>
+            <span id="cartSubtotalAmount">₹0</span>
+          </div>
+          <button id="cartProceed" class="cart-proceed-btn">
+            Proceed to checkout
+          </button>
+        </footer>
+      </div>
+    </aside>
+  </main>
+
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-bottom">
       <p>© 2025 Cell Care India. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
+  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="vanilla-tilt.js"></script>
   <script src="script.js"></script>
