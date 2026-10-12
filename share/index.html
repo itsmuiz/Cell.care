@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Cell Care India</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Main site styles -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Product grid/card UI (same as products page) -->
+    <link rel="stylesheet" href="products.css"><!-- <- use your actual filename -->
+</head>
+
+<body>
+    <!-- <div class="electric-cursor"></div> -->
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="/index.html" style="text-decoration:none;color:inherit;">
+
+            <div class="logo">
+                <i class="fa-solid fa-battery-empty"></i><strong>Cell Care</strong> <span>India</span>
+            </div>
+
+        </a>
+
+        <i class="fa-solid fa-bars hamburger"></i>
+
+        <div class="sidebar">
+            <i class="fa-solid fa-times close-menu"></i>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active-link">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">
+                <i class="fa-solid fa-bolt"></i>
+                Leading Battery Manufacturer in India
+            </span>
+
+            <h1>Powering the Future <br> with <span>Cell Care India</span></h1>
+            <p>Manufacturing premium quality batteries with cutting-edge technology for automotive,
+                industrial and consumer applications.</p>
+
+            <div class="buttons">
+                <a href="products.html" class="btn primary">Explore Products</a>
+                <a href="contact.html" class="btn secondary">Contact Us</a>
+            </div>
+        </div>
+
+        <div class="hero-image tilt">
+            <img src="hero.svg" alt="Battery Icon">
+        </div>
+    </section>
+
+    <!-- HOMEPAGE PRODUCTS (uses same UI as products page) -->
+    <section class="products-section">
+        <div class="products-header">
+            <h2 class="section-title">Our Products</h2>
+            <!-- <p class="section-subtitle">Random 6 products refresh every time.</p> -->
+        </div>
+
+        <!-- IMPORTANT: same container class as products page -->
+        <div id="homeProducts" class="products-grid">
+            <!-- Initial fallback -->
+            <article class="product-card-new">
+                <div class="img-wrap" style="background-color:#020617;"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Loading products…</h3>
+                    <p class="product-mini">Please wait a moment.</p>
+                </div>
+            </article>
+        </div>
+
+        <div style="text-align:center;margin-top:24px;">
+            <a href="products.html" class="btn primary">View All Products</a>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-section">
+        <p class="section-subtitle">
+            Comprehensive solutions to support your battery needs throughout their lifecycle.
+        </p>
+
+        <div class="services-container">
+            <div class="services-list">
+                <div class="service-card">
+                    <h3 class="service-title">Installation & Setup</h3>
+                    <p class="service-description">Professional installation services ensuring optimal battery
+                        performance.</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">Maintenance & Support</h3>
+                    <p class="service-description">Regular maintenance services with 24/7 technical support.</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">Battery Testing & Diagnostics</h3>
+                    <p class="service-description">Comprehensive testing to evaluate battery health.</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">Recycling & Disposal</h3>
+                    <p class="service-description">Eco-friendly battery recycling and waste management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features-section">
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-industry"></i></div>
+            <h3 class="feature-title">State-of-Art Facility</h3>
+            <p class="feature-text">Advanced manufacturing facility with cutting-edge technology.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3 class="feature-title">Quality Assurance</h3>
+            <p class="feature-text">Rigorous testing ensuring superior performance and safety.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+            <h3 class="feature-title">Energy Efficiency</h3>
+            <p class="feature-text">Batteries designed for optimal energy usage.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h2><i class="fas fa-battery-full"></i> CELL CARE INDIA</h2>
+                <p>Providing top-notch EV batteries, spare parts, and services.</p>
+                <div class="social-icons">
+                    <a class="social-facebook" href="#"><i class="fab fa-facebook"></i></a>
+                    <a class="social-twitter" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="social-instagram" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="social-linkedin" href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h3>Get In Touch</h3>
+                <p><i class="fas fa-map-marker-alt"></i> <span id="footer-address"> <a
+                            href="https://maps.app.goo.gl/vH6nHWZBNRppjmoE6">New Delhi, India</a> </span></p>
+                <p><i class="fas fa-phone"></i> <span id="footer-phone">+91 XXXXXXXXXX</span></p>
+                <p><i class="fas fa-envelope"></i> <span id="footer-email">info@youremail.com</span></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Cell Care India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- your global JS -->
+    <script src="api-config.js"></script>
+    <script src="script.js"></script>
+
+    <!-- HOMEPAGE BACKEND INTEGRATION (self-contained, no globals) -->
+    <script>
+        (function () {
+            const BASE = "https://artifyscreens.pythonanywhere.com";
+            const PRODUCTS_BASE = (window.CELLCARE_API && window.CELLCARE_API.products) || window.PRODUCTS_API_URL;
+
+            function escapeHtml(str) {
+                if (!str) return "";
+                return String(str)
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#39;");
+            }
+
+            // -------- FOOTER CONFIG (safe, scoped) --------
+            async function loadConfig() {
+                try {
+                    const res = await fetch(BASE + "/api/config/");
+                    if (!res.ok) return;
+                    const data = await res.json();
+
+                    const emailEl = document.getElementById("footer-email");
+                    const phoneEl = document.getElementById("footer-phone");
+                    const addEl = document.getElementById("footer-address");
+
+                    if (addEl)
+                        addEl.textContent =
+                            data.address || data.address || "New Delhi";
+                    if (emailEl)
+                        emailEl.textContent =
+                            data.contact_email || data.site_email || "info@cellcareindia.com";
+                    if (phoneEl)
+                        phoneEl.textContent =
+                            data.whatsapp_number || data.whatsapp_phone || "+91 9999999999";
+
+                    if (data.facebook && document.querySelector(".social-facebook"))
+                        document.querySelector(".social-facebook").href = data.facebook;
+                    if (data.twitter && document.querySelector(".social-twitter"))
+                        document.querySelector(".social-twitter").href = data.twitter;
+                    if (data.instagram && document.querySelector(".social-instagram"))
+                        document.querySelector(".social-instagram").href = data.instagram;
+                    if (data.linkedin && document.querySelector(".social-linkedin"))
+                        document.querySelector(".social-linkedin").href = data.linkedin;
+                } catch (e) {
+                    console.log("CONFIG ERROR", e);
+                }
+            }
+
+            // -------- HOMEPAGE PRODUCTS (max 6, random, uses .products-grid + .product-card-new) --------
+            async function loadHomeProducts() {
+                const grid = document.getElementById("homeProducts");
+                if (!grid) return;
+
+                try {
+                    const res = await fetch(PRODUCTS_BASE + "?page=1&page_size=50");
+                    if (!res.ok) throw new Error("Bad status " + res.status);
+
+                    const data = await res.json();
+                    let items = data.items || data.results || [];
+                    if (!items.length) {
+                        grid.innerHTML =
+                            '<p style="color:#cbd5f5;text-align:center;width:100%;">No products available.</p>';
+                        return;
+                    }
+
+                    // shuffle and slice to 6
+                    for (let i = items.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [items[i], items[j]] = [items[j], items[i]];
+                    }
+                    items = items.slice(0, 6);
+
+                    grid.innerHTML = "";
+
+                    items.forEach(p => {
+                        const card = document.createElement("article");
+                        card.className = "product-card-new";
+                        card.dataset.productId = p.id;
+
+                        // click sends to products page with ID
+                        card.onclick = () => {
+                            window.location.href = "products.html?product_id=" + encodeURIComponent(p.id);
+                        };
+
+                        const imgUrl = p.image_url || "";
+                        const imgStyle = imgUrl
+                            ? "background-image:url('" + imgUrl + "')"
+                            : "background-color:#020617;";
+                        const title = escapeHtml(p.title || "Product");
+                        const desc = p.description ? escapeHtml(p.description) : "";
+                        const priceNum = Number(p.price) || 0;
+                        const price = priceNum
+                            ? "₹" + priceNum.toLocaleString("en-IN")
+                            : "Contact";
+
+                        const isAvailable = p.available !== false;
+                        const stockClass = isAvailable ? "available" : "unavailable";
+                        const stockText = isAvailable ? "Available" : "Out of Stock";
+
+                        card.innerHTML = `
+                        <div class="img-wrap" style="${imgStyle}">
+                            ${imgUrl ? `<img src="${imgUrl}" class="product-img" alt="${title}" loading="lazy">` : ""}
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">${title}</h3>
+                            ${desc ? `<p class="product-mini desc-clamp">${desc}</p>` : ""}
+                            <div class="meta-row">
+                                <span class="status ${stockClass}">${stockText}</span>
+                                <span class="price">${price}</span>
+                            </div>
+                        </div>
+                    `;
+
+                        grid.appendChild(card);
+                    });
+                } catch (err) {
+                    console.error("HOME PRODUCTS ERROR", err);
+                    grid.innerHTML =
+                        '<p style="color:#f97373;text-align:center;width:100%;">Could not load products.</p>';
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+                loadConfig();
+                loadHomeProducts();
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
