@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Your Order | Cell Care India</title>
+  <meta name="theme-color" content="#159447" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/storefront.css?v=3" />
+</head>
+<body>
+
+  <div id="ccHeaderMount"></div>
+
+  <div class="cc-breadcrumb-bar">
+    <div class="container">
+      <a href="index.html">Home</a> <span class="cc-breadcrumb-sep">/</span> <span>Track Order</span>
+    </div>
+  </div>
+
+  <main class="container" style="padding-bottom:64px; min-height:52vh;">
+    <h1 class="cc-page-title">Track Your Order Enquiry</h1>
+
+    <div style="max-width:740px; margin:0 auto 30px; background:var(--surface-subtle); border:1px solid var(--border-light); padding:26px; border-radius:6px;">
+      <p style="margin:0 0 16px; color:var(--text-body); font-size:14px;">Enter your Cell Care India <strong>Order Reference ID</strong> (e.g. <code>CCI-2026-1001</code>) or registered <strong>10-digit Mobile Number</strong> to check dispatch status.</p>
+      <form id="trackForm" style="display:flex; gap:10px; flex-wrap:wrap;">
+        <input type="text" id="trackQuery" class="cc-input" placeholder="Order ID (CCI-2026-1001) or Mobile Number" style="flex:1; min-width:240px;" required />
+        <button type="submit" class="cc-btn-primary" style="padding:0 28px;">Track Order</button>
+      </form>
+      <div style="margin-top:10px; font-size:12.5px; color:var(--text-muted);">
+        Try sample reference: <button type="button" id="trackSampleBtn" style="background:none; border:none; color:var(--brand-green); font-weight:700; cursor:pointer; text-decoration:underline;">CCI-2026-1001</button>
+      </div>
+    </div>
+
+    <div id="trackResult" style="max-width:860px; margin:0 auto;"></div>
+  </main>
+
+  <div id="ccFooterMount"></div>
+
+  <script src="assets/js/api-config.js?v=3"></script>
+  <script src="assets/js/store-core.js?v=3"></script>
+  <script>
+    const STEPS = ["placed", "confirmed", "packed", "shipped", "delivered"];
+    const STEP_LABELS = ["Enquiry Logged", "Confirmed", "QC & Packed", "Dispatched", "Delivered"];
+
+    async function lookupOrder(q) {
+      const box = document.getElementById("trackResult");
+      const CC = window.CellCare;
+      box.innerHTML = `<div style="text-align:center; padding:24px; color:var(--text-muted);">Fetching order status...</div>`;
+      const isPhone = /^\d{10}$/.test(q.replace(/\D/g, "")) && !q.toUpperCase().startsWith("CCI");
+      const url = isPhone ? `/api/orders?phone=${encodeURIComponent(q)}` : `/api/orders?order_id=${encodeURIComponent(q)}`;
+
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        if (!data.ok || !data.order) {
+          box.innerHTML = `<div class="cc-empty-notice"><i class="fas fa-info-circle" style="color:var(--brand-green);"></i><span>${CC.esc(data.error || "Order not found.")}</span></div>`;
+          return;
+        }
+        const o = data.order;
+        const activeIdx = Math.max(0, STEPS.indexOf(String(o.status || "placed").toLowerCase()));
+
+        box.innerHTML = `
+          <div style="background:var(--brand-white); border:1px solid var(--border-light); border-radius:6px; padding:28px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-bottom:16px; border-bottom:1px solid var(--border-light); margin-bottom:24px;">
+              <div>
+                <h2 style="margin:0; font-size:20px; color:var(--brand-charcoal);">Order #${CC.esc(o.order_id)}</h2>
+                <div style="font-size:13px; color:var(--text-muted);">Placed on ${new Date(o.created_at).toLocaleString("en-IN")}</div>
+              </div>
+              <span style="background:var(--brand-green); color:var(--brand-white); font-weight:700; font-size:12.5px; padding:6px 14px; border-radius:4px; text-transform:uppercase;">${CC.esc(o.status)}</span>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:8px; margin-bottom:28px; text-align:center;">
+              ${STEPS.map((st, idx) => `
+                <div>
+                  <div style="width:34px; height:34px; border-radius:50%; margin:0 auto 6px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:13px; background:${idx <= activeIdx ? "var(--brand-green)" : "var(--surface-subtle)"}; color:${idx <= activeIdx ? "#ffffff" : "var(--text-muted)"};">
+                    ${idx <= activeIdx ? '<i class="fas fa-check"></i>' : idx + 1}
+                  </div>
+                  <div style="font-size:12px; font-weight:${idx <= activeIdx ? "700" : "500"}; color:${idx <= activeIdx ? "var(--brand-charcoal)" : "var(--text-muted)"};">${STEP_LABELS[idx]}</div>
+                </div>
+              `).join("")}
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:18px; background:var(--surface-subtle); padding:18px; border-radius:4px; margin-bottom:20px; font-size:13.5px;">
+              <div>
+                <strong>Courier &amp; Tracking</strong><br/>
+                Partner: ${CC.esc(o.tracking?.courier || "Confirmed via WhatsApp")}<br/>
+                AWB No: <strong>${CC.esc(o.tracking?.awb || "Pending Dispatch")}</strong><br/>
+                Est. Delivery: ${CC.esc(o.tracking?.estimated_delivery || "3–5 Working Days")}
+              </div>
+              <div>
+                <strong>Delivery Address</strong><br/>
+                ${CC.esc(o.customer?.name)}<br/>
+                ${CC.esc(o.customer?.address)}, ${CC.esc(o.customer?.city)} - ${CC.esc(o.customer?.pincode)}
+              </div>
+            </div>
+
+            <h3 style="font-size:15px; margin:0 0 10px; color:var(--brand-charcoal);">Items</h3>
+            ${(o.items || []).map(it => `
+              <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border-light); font-size:13.5px;">
+                <span>${CC.esc(it.title)} &times; ${it.qty}</span>
+                <strong>${CC.formatINR(it.price * it.qty)}</strong>
+              </div>
+            `).join("")}
+            <div style="display:flex; justify-content:space-between; padding-top:12px; font-size:16px; font-weight:700; color:var(--brand-green);">
+              <span>Order Estimate</span>
+              <span>${CC.formatINR(o.pricing?.total || 0)}</span>
+            </div>
+          </div>
+        `;
+      } catch {
+        box.innerHTML = `<div class="cc-empty-notice">Unable to reach tracking server right now. Contact us on WhatsApp at +91 85059 10581.</div>`;
+      }
+    }
+
+    document.getElementById("trackForm")?.addEventListener("submit", e => {
+      e.preventDefault();
+      const q = document.getElementById("trackQuery").value.trim();
+      if (q) lookupOrder(q);
+    });
+
+    document.getElementById("trackSampleBtn")?.addEventListener("click", () => {
+      document.getElementById("trackQuery").value = "CCI-2026-1001";
+      lookupOrder("CCI-2026-1001");
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const id = new URLSearchParams(window.location.search).get("order_id");
+      if (id) {
+        document.getElementById("trackQuery").value = id;
+        lookupOrder(id);
+      }
+    });
+  </script>
+</body>
+</html>

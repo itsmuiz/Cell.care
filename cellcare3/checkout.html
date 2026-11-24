@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WhatsApp Order Enquiry | Cell Care India</title>
+  <meta name="theme-color" content="#159447" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/storefront.css?v=3" />
+</head>
+<body>
+
+  <div id="ccHeaderMount"></div>
+
+  <div class="cc-breadcrumb-bar">
+    <div class="container">
+      <a href="index.html">Home</a> <span class="cc-breadcrumb-sep">/</span>
+      <a href="cart.html">Cart</a> <span class="cc-breadcrumb-sep">/</span>
+      <span>Order Enquiry</span>
+    </div>
+  </div>
+
+  <main class="container" style="padding-bottom:60px;">
+    <h1 class="cc-page-title">Complete Your WhatsApp Order Enquiry</h1>
+
+    <!-- Empty Cart Guard -->
+    <div id="chkEmptyAlert" style="display:none; max-width:760px; margin:0 auto;">
+      <div class="cc-empty-notice">
+        <i class="fas fa-info-circle" style="color:var(--brand-green);"></i>
+        <span>Your enquiry cart is empty. Please select products before submitting an order enquiry.</span>
+      </div>
+      <a href="shop.html" class="cc-btn-primary">Browse Products</a>
+    </div>
+
+    <!-- Order Confirmation Screen -->
+    <div id="chkConfirmation" style="display:none;"></div>
+
+    <!-- 2-Column Customer & Delivery Form + Order Summary -->
+    <form id="ccCheckoutForm" novalidate>
+      <div id="chkMainGrid" style="display:grid; grid-template-columns:1.25fr 0.85fr; gap:32px; align-items:start;">
+
+        <!-- Customer & Delivery Details -->
+        <div style="background:var(--brand-white); border:1px solid var(--border-light); border-radius:6px; padding:26px;">
+          <h2 style="margin:0 0 18px; font-size:18px; font-weight:700; color:var(--brand-charcoal); border-bottom:2px solid var(--brand-green); padding-bottom:8px;">Customer &amp; Delivery Details</h2>
+
+          <div id="chkFormError" style="display:none; background:var(--surface-subtle); border-left:4px solid var(--brand-charcoal); color:var(--brand-charcoal); padding:11px 14px; border-radius:4px; margin-bottom:16px; font-size:13.5px; font-weight:700;"></div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px;">
+            <div class="cc-form-group">
+              <label class="cc-form-label" for="chkName">Full Name *</label>
+              <input type="text" id="chkName" class="cc-input" required placeholder="e.g. Rajesh Sharma" />
+            </div>
+            <div class="cc-form-group">
+              <label class="cc-form-label" for="chkPhone">10-Digit Mobile / WhatsApp Number *</label>
+              <input type="tel" id="chkPhone" class="cc-input" required maxlength="10" placeholder="9876543210" />
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px;">
+            <div class="cc-form-group">
+              <label class="cc-form-label" for="chkEmail">Email Address (Optional)</label>
+              <input type="email" id="chkEmail" class="cc-input" placeholder="you@example.com" />
+            </div>
+            <div class="cc-form-group">
+              <label class="cc-form-label" for="chkGstin">GSTIN (Optional — For B2B Invoice)</label>
+              <input type="text" id="chkGstin" class="cc-input" placeholder="e.g. 07ABCDE1234F1Z5" />
+            </div>
+          </div>
+
+          <div class="cc-form-group">
+            <label class="cc-form-label" for="chkAddress">Complete Delivery Address *</label>
+            <input type="text" id="chkAddress" class="cc-input" required placeholder="House/Shop No., Street, Landmark" />
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:14px;">
+            <div class="cc-form-group">
+              <label class="cc-form-label" for="chkCity">City *</label>
+              <input type="text" id="chkCity" class="cc-input" required placeholder="New Delhi" />
+            </div>
+            <div class="cc-form-group">
+              <label class="cc-form-label" for="chkState">State *</label>
+              <input type="text" id="chkState" class="cc-input" required placeholder="Delhi" />
+            </div>
+            <div class="cc-form-group">
+              <label class="cc-form-label" for="chkPincode">Pincode *</label>
+              <input type="text" id="chkPincode" class="cc-input" required maxlength="6" placeholder="110051" />
+            </div>
+          </div>
+
+          <div class="cc-form-group">
+            <label class="cc-form-label" for="chkNotes">Order Notes / Requirements (Optional)</label>
+            <textarea id="chkNotes" class="cc-input" rows="3" placeholder="Any specific vehicle model, connector type, or bulk dispatch note..."></textarea>
+          </div>
+        </div>
+
+        <!-- Order Summary & Direct WhatsApp Submit -->
+        <div style="background:var(--surface-subtle); border:1px solid var(--border-light); border-radius:6px; padding:24px;">
+          <h2 style="margin:0 0 14px; font-size:18px; font-weight:700; color:var(--brand-charcoal);">Order Summary</h2>
+          <div id="chkItemsList" style="margin-bottom:16px;"></div>
+
+          <div style="display:flex; gap:8px; margin-bottom:6px;">
+            <input type="text" id="chkCouponInput" class="cc-input" placeholder="Coupon (CELLCARE5 / B2BBULK)" style="height:38px;" />
+            <button type="button" id="chkApplyCouponBtn" class="cc-btn-charcoal" style="height:38px; padding:0 16px;">Apply</button>
+          </div>
+          <div id="chkCouponMsg" style="font-size:12.5px; margin-bottom:14px;"></div>
+
+          <div style="border-top:1px solid var(--border-light); padding-top:12px; font-size:14px;">
+            <div style="display:flex; justify-content:space-between; padding:5px 0;">
+              <span>Subtotal</span><strong id="chkSub">₹0</strong>
+            </div>
+            <div id="chkDiscRow" style="display:none; justify-content:space-between; padding:5px 0; color:var(--brand-green);">
+              <span>Discount</span><strong id="chkDisc">-₹0</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:5px 0; font-size:12.5px; color:var(--text-muted);">
+              <span>Delivery</span><span>Confirmed on WhatsApp</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:12px 0; margin-top:6px; border-top:1px solid var(--border-color); font-size:18px; font-weight:700; color:var(--brand-charcoal);">
+              <span>Estimated Total</span><span id="chkTotal" style="color:var(--brand-green);">₹0</span>
+            </div>
+          </div>
+
+          <div style="background:var(--brand-white); border:1px solid var(--brand-green); border-radius:4px; padding:14px; margin:14px 0 18px; font-size:13px; color:var(--brand-charcoal);">
+            <div style="font-weight:700; color:var(--brand-green); margin-bottom:4px;">
+              <i class="fab fa-whatsapp" style="margin-right:6px;"></i>Direct WhatsApp Ordering (+91 85059 10581)
+            </div>
+            Clicking the button below opens WhatsApp with your complete order list, SKUs, quantities, prices, and delivery address pre-filled so our team can confirm prepaid dispatch immediately.
+          </div>
+
+          <button type="submit" id="chkPlaceOrderBtn" class="cc-btn-primary" style="width:100%; padding:14px; font-size:15px;">
+            <i class="fab fa-whatsapp" style="font-size:18px;"></i> Send Order on WhatsApp
+          </button>
+        </div>
+
+      </div>
+    </form>
+  </main>
+
+  <div id="ccFooterMount"></div>
+
+  <style>
+    @media (max-width: 900px) {
+      #chkMainGrid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+
+  <script src="assets/js/api-config.js?v=3"></script>
+  <script src="assets/js/store-core.js?v=3"></script>
+  <script src="assets/js/checkout-page.js?v=3"></script>
+</body>
+</html>

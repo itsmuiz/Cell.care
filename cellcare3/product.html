@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details | Cell Care India</title>
+  <meta name="theme-color" content="#159447" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/storefront.css?v=3" />
+</head>
+<body>
+
+  <div id="ccHeaderMount"></div>
+
+  <div class="cc-breadcrumb-bar">
+    <div class="container" id="pdpBreadcrumb">
+      <a href="index.html">Home</a> <span class="cc-breadcrumb-sep">/</span> <a href="shop.html">Products</a>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="cc-pdp-header" id="pdpHeader"></div>
+
+    <div class="cc-pdp-grid">
+      <div id="pdpGalleryWrap"></div>
+      <div id="pdpInfoWrap"></div>
+    </div>
+
+    <section class="cc-shelf-section">
+      <div class="cc-shelf-header">
+        <h2 class="cc-shelf-title">Customers Also Viewed</h2>
+      </div>
+      <div class="cc-carousel-wrap">
+        <div class="cc-carousel-track" id="pdpAlsoBought"></div>
+      </div>
+    </section>
+
+    <section class="cc-pdp-tabs">
+      <div class="cc-tab-headers">
+        <button type="button" class="cc-tab-btn active" data-tab="pdpTabDesc">Description</button>
+        <button type="button" class="cc-tab-btn" data-tab="pdpTabSpecs">Product Details &amp; SKU</button>
+      </div>
+
+      <div class="cc-tab-pane active" id="pdpTabDesc"></div>
+      <div class="cc-tab-pane" id="pdpTabSpecs"></div>
+    </section>
+
+    <section class="cc-shelf-section">
+      <div class="cc-shelf-header">
+        <h2 class="cc-shelf-title">Related Products</h2>
+      </div>
+      <div class="cc-carousel-wrap">
+        <div class="cc-carousel-track" id="pdpRelated"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="ccFooterMount"></div>
+
+  <script src="assets/js/api-config.js?v=4"></script>
+  <script src="assets/js/store-core.js?v=4"></script>
+  <script src="assets/js/pdp.js?v=4"></script>
+</body>
+</html>

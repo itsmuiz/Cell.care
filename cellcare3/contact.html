@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support &amp; Contact Us | Cell Care India</title>
+  <meta name="theme-color" content="#159447" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/storefront.css?v=3" />
+</head>
+<body>
+
+  <div id="ccHeaderMount"></div>
+
+  <div class="cc-breadcrumb-bar">
+    <div class="container">
+      <a href="index.html">Home</a> <span class="cc-breadcrumb-sep">/</span> <span>Support &amp; Contact</span>
+    </div>
+  </div>
+
+  <main class="container" style="padding-bottom:64px;">
+    <h1 class="cc-page-title">Support &amp; Contact</h1>
+
+    <div style="position:relative; height:290px; border-radius:6px; overflow:hidden; margin-bottom:44px; background:var(--brand-charcoal) url('assets/images/hero-bms-banner.jpg') center/cover no-repeat; display:flex; align-items:center; justify-content:center;">
+      <div style="position:absolute; inset:0; background:rgba(34, 39, 43, 0.78);"></div>
+      <div style="position:relative; z-index:2; text-align:center; padding:0 20px;">
+        <h2 style="font-family:var(--font-heading); font-size:40px; font-weight:800; color:var(--brand-white); margin:0;">Contact Cell Care India</h2>
+        <p style="color:rgba(255,255,255,0.88); font-size:15px; margin:10px 0 0;">Direct WhatsApp Ordering (+91 85059 10581) &bull; Technical Support &bull; B2B Wholesale Desk</p>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1.15fr; gap:40px; align-items:stretch;" id="ccSupportGrid">
+
+      <div style="position:relative; border-radius:6px; overflow:hidden; min-height:440px; background:var(--brand-charcoal) url('assets/images/hero-ev-banner.jpg') center/cover no-repeat; display:flex; flex-direction:column; justify-content:flex-end; padding:28px;">
+        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(34,39,43,0.4) 0%, rgba(34,39,43,0.92) 100%);"></div>
+        <div style="position:relative; z-index:2; color:var(--brand-white);">
+          <h3 style="font-family:var(--font-heading); font-size:24px; font-weight:800; margin:0 0 12px; color:var(--brand-white);">Connect With Our Sales Team</h3>
+          <div style="font-size:13.5px; line-height:1.85; color:rgba(255,255,255,0.9); margin-bottom:20px;">
+            <div><i class="fas fa-map-marker-alt" style="color:var(--brand-green); width:20px;"></i> Shop No. 4, B-32, New Brij Puri, Near Jagatpuri Police Station, New Delhi - 110051</div>
+            <div><i class="fab fa-whatsapp" style="color:var(--brand-green); width:20px;"></i> +91 85059 10581</div>
+            <div><i class="fas fa-envelope" style="color:var(--brand-green); width:20px;"></i> CellCareIndia2025@gmail.com</div>
+            <div><i class="far fa-clock" style="color:var(--brand-green); width:20px;"></i> Mon – Sat: 9:30 AM – 7:00 PM</div>
+          </div>
+          <button type="button" onclick="CellCare.openWhatsApp('Hello Cell Care India! I need assistance with EV spare parts / battery products.')" class="cc-btn-primary" style="padding:12px 22px;">
+            <i class="fab fa-whatsapp" style="font-size:18px;"></i> Start WhatsApp Chat
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="font-family:var(--font-heading); font-size:26px; font-weight:700; color:var(--brand-charcoal); margin:0 0 10px;">Send an Enquiry</h2>
+        <p style="font-size:14px; color:var(--text-muted); margin:0 0 22px;">
+          Fill out your details below to send your enquiry straight to our WhatsApp desk (+91 85059 10581) and log it with our support team.
+        </p>
+
+        <form id="ccSupportForm">
+          <div class="cc-form-group">
+            <label class="cc-form-label" for="supName">Your Name *</label>
+            <input type="text" id="supName" class="cc-input" required placeholder="Full Name" />
+          </div>
+          <div class="cc-form-group">
+            <label class="cc-form-label" for="supPhone">Your Mobile / WhatsApp Number *</label>
+            <input type="tel" id="supPhone" class="cc-input" required placeholder="10-digit Mobile Number" />
+          </div>
+          <div class="cc-form-group">
+            <label class="cc-form-label" for="supEmail">Your Email (Optional)</label>
+            <input type="email" id="supEmail" class="cc-input" placeholder="name@example.com" />
+          </div>
+          <div class="cc-form-group">
+            <label class="cc-form-label" for="supSubject">Enquiry Type</label>
+            <select id="supSubject" class="cc-input">
+              <option value="EV Parts & Battery Fitment">EV Parts &amp; Battery Fitment Help</option>
+              <option value="Wholesale B2B Order">Wholesale / Dealer Bulk Pricing</option>
+              <option value="Custom Battery Pack Build">Custom Voltage / Ah Battery Pack</option>
+              <option value="Order & Warranty Support">Order Tracking / Warranty Support</option>
+            </select>
+          </div>
+          <div class="cc-form-group">
+            <label class="cc-form-label" for="supMessage">Your Message *</label>
+            <textarea id="supMessage" class="cc-input" rows="5" required placeholder="Share product name, SKU, quantity, or EV scooter model..."></textarea>
+          </div>
+
+          <button type="submit" id="supSubmitBtn" class="cc-btn-primary" style="padding:12px 28px; font-size:14px;">
+            <i class="fab fa-whatsapp"></i> Send Enquiry on WhatsApp
+          </button>
+          <div id="supFormStatus" style="margin-top:14px; font-size:13.5px;"></div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <div id="ccFooterMount"></div>
+
+  <style>
+    @media (max-width: 820px) { #ccSupportGrid { grid-template-columns: 1fr !important; } }
+  </style>
+
+  <script src="assets/js/api-config.js?v=3"></script>
+  <script src="assets/js/store-core.js?v=3"></script>
+  <script>
+    document.getElementById("ccSupportForm")?.addEventListener("submit", async e => {
+      e.preventDefault();
+      const status = document.getElementById("supFormStatus");
+      const btn = document.getElementById("supSubmitBtn");
+      const payload = {
+        action: "submit_inquiry",
+        name: document.getElementById("supName").value.trim(),
+        phone: document.getElementById("supPhone").value.trim(),
+        email: document.getElementById("supEmail").value.trim(),
+        category: document.getElementById("supSubject").value,
+        message: document.getElementById("supMessage").value.trim()
+      };
+      if (!payload.name || !payload.phone || !payload.message) {
+        status.innerHTML = `<span style="color:var(--brand-charcoal); font-weight:700;">Please fill in your name, phone number, and message.</span>`;
+        return;
+      }
+      btn.disabled = true;
+
+      try {
+        await fetch("/api/admin", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+      } catch {}
+
+      const waMsg = [
+        "Hello Cell Care India,",
+        `Support Enquiry (${payload.category}):`,
+        `Name: ${payload.name}`,
+        `Phone: ${payload.phone}`,
+        ...(payload.email ? [`Email: ${payload.email}`] : []),
+        `Message: ${payload.message}`
+      ].join("\n");
+
+      window.CellCare.openWhatsApp(waMsg);
+      e.target.reset();
+      status.innerHTML = `<div style="background:var(--brand-green-tint); border:1px solid var(--brand-green); color:var(--brand-charcoal); padding:12px 14px; border-radius:4px; font-weight:600;">Enquiry ready! WhatsApp opened to +91 85059 10581.</div>`;
+      btn.disabled = false;
+    });
+  </script>
+</body>
+</html>
