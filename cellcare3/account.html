@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Account | Cell Care India</title>
+  <meta name="theme-color" content="#159447" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/storefront.css?v=3" />
+</head>
+<body>
+
+  <div id="ccHeaderMount"></div>
+
+  <div class="cc-breadcrumb-bar" style="margin-bottom:0;">
+    <div class="container">
+      <a href="index.html">Home</a> <span class="cc-breadcrumb-sep">/</span> <span>My Account</span>
+    </div>
+  </div>
+
+  <main class="cc-account-page">
+    <div class="container">
+      <h1 class="cc-page-title">My Account</h1>
+
+      <div id="ccAuthView">
+        <div class="cc-auth-tabs">
+          <button type="button" class="cc-auth-tab active" data-mode="login">Log in</button>
+          <button type="button" class="cc-auth-tab" data-mode="register">Register</button>
+        </div>
+
+        <div class="cc-auth-card">
+          <div id="ccLoginFormWrap">
+            <h2 style="font-size:15px; font-weight:600; margin:0 0 18px; color:var(--brand-charcoal);">Log In Your Account</h2>
+            <div id="loginError" style="display:none; background:var(--surface-subtle); border-left:3px solid var(--brand-charcoal); color:var(--brand-charcoal); padding:10px 12px; border-radius:3px; font-size:13px; margin-bottom:14px; font-weight:600;"></div>
+
+            <form id="ccLoginForm">
+              <div class="cc-form-group">
+                <input type="text" id="loginEmail" class="cc-input" placeholder="Email address or 10-digit phone" required />
+              </div>
+              <div class="cc-form-group" style="position:relative;">
+                <input type="password" id="loginPass" class="cc-input" placeholder="Password" required style="padding-right:42px;" />
+                <button type="button" class="cc-pass-toggle" data-target="loginPass" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:none; border:none; color:var(--text-muted); cursor:pointer;" aria-label="Show password">
+                  <i class="far fa-eye"></i>
+                </button>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; font-size:13px;">
+                <label style="display:flex; align-items:center; gap:7px; cursor:pointer;">
+                  <input type="checkbox" checked style="accent-color:var(--brand-green);" /> Remember me
+                </label>
+                <a href="#" id="ccForgotLink" style="color:var(--brand-green); font-weight:600;">Forgot your password?</a>
+              </div>
+              <button type="submit" class="cc-btn-primary" style="width:100%; padding:12px;">Log in</button>
+            </form>
+
+            <div style="margin-top:16px; padding-top:14px; border-top:1px solid var(--border-light); text-align:center; font-size:12.5px; color:var(--text-muted);">
+              Want to preview the customer dashboard?
+              <button type="button" id="ccDemoLoginBtn" style="background:none; border:none; color:var(--brand-green); font-weight:700; cursor:pointer; text-decoration:underline;">Use Demo Account</button>
+            </div>
+          </div>
+
+          <div id="ccRegisterFormWrap" style="display:none;">
+            <h2 style="font-size:15px; font-weight:600; margin:0 0 18px; color:var(--brand-charcoal);">Create Your Cell Care India Account</h2>
+            <div id="regError" style="display:none; background:var(--surface-subtle); border-left:3px solid var(--brand-charcoal); color:var(--brand-charcoal); padding:10px 12px; border-radius:3px; font-size:13px; margin-bottom:14px; font-weight:600;"></div>
+
+            <form id="ccRegisterForm">
+              <div class="cc-form-group"><input type="text" id="regName" class="cc-input" placeholder="Full Name *" required /></div>
+              <div class="cc-form-group"><input type="email" id="regEmail" class="cc-input" placeholder="Email Address *" required /></div>
+              <div class="cc-form-group"><input type="tel" id="regPhone" class="cc-input" placeholder="10-Digit Mobile / WhatsApp *" maxlength="10" required /></div>
+              <div class="cc-form-group" style="position:relative;">
+                <input type="password" id="regPass" class="cc-input" placeholder="Create Password (min 6 chars) *" minlength="6" required style="padding-right:42px;" />
+                <button type="button" class="cc-pass-toggle" data-target="regPass" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:none; border:none; color:var(--text-muted); cursor:pointer;">
+                  <i class="far fa-eye"></i>
+                </button>
+              </div>
+              <button type="submit" class="cc-btn-primary" style="width:100%; padding:12px;">Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="ccDashboardView" style="display:none; max-width:1020px; margin:0 auto;">
+        <div style="display:grid; grid-template-columns:240px 1fr; gap:26px; align-items:start;" id="ccDashGrid">
+          <aside style="background:var(--brand-white); border:1px solid var(--border-light); border-radius:4px; overflow:hidden;">
+            <div style="background:var(--brand-charcoal); padding:18px; color:var(--brand-white); border-bottom:2px solid var(--brand-green);">
+              <strong id="dashWelcome" style="display:block; font-size:16px;">Hello!</strong>
+              <span id="dashEmail" style="font-size:12px; opacity:0.85;"></span>
+            </div>
+            <div style="display:flex; flex-direction:column;">
+              <button type="button" class="dash-nav-btn active" data-pane="overview" style="text-align:left; padding:13px 18px; border:none; border-bottom:1px solid var(--border-light); background:#fff; cursor:pointer; font-weight:600; color:var(--brand-charcoal);">Dashboard Overview</button>
+              <button type="button" class="dash-nav-btn" data-pane="orders" style="text-align:left; padding:13px 18px; border:none; border-bottom:1px solid var(--border-light); background:#fff; cursor:pointer; font-weight:600; color:var(--brand-charcoal);">My Order Enquiries</button>
+              <button type="button" class="dash-nav-btn" data-pane="profile" style="text-align:left; padding:13px 18px; border:none; border-bottom:1px solid var(--border-light); background:#fff; cursor:pointer; font-weight:600; color:var(--brand-charcoal);">Saved Address &amp; Profile</button>
+              <a href="wishlist.html" style="padding:13px 18px; border-bottom:1px solid var(--border-light); font-weight:600; color:var(--brand-charcoal);">My Wishlist</a>
+              <button type="button" class="dash-nav-btn" data-pane="logout" style="text-align:left; padding:13px 18px; border:none; background:#fff; cursor:pointer; font-weight:600; color:var(--brand-charcoal);">Log out</button>
+            </div>
+          </aside>
+
+          <section style="background:var(--brand-white); border:1px solid var(--border-light); border-radius:4px; padding:26px;">
+            <div id="dashPane_overview" class="dash-pane">
+              <h2 style="margin:0 0 14px; font-size:20px; color:var(--brand-charcoal);">Account Overview</h2>
+              <p style="color:var(--text-muted); margin:0 0 22px;">Manage your Cell Care India EV &amp; battery order enquiries, track shipments, and save your delivery address for faster WhatsApp ordering.</p>
+              <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:16px;">
+                <div style="background:var(--surface-subtle); border:1px solid var(--border-light); padding:18px; border-radius:4px;">
+                  <div style="font-size:12px; color:var(--text-muted); text-transform:uppercase;">Total Enquiries</div>
+                  <div id="dashOrderCount" style="font-size:28px; font-weight:800; color:var(--brand-green);">0</div>
+                </div>
+                <div style="background:var(--surface-subtle); border:1px solid var(--border-light); padding:18px; border-radius:4px;">
+                  <div style="font-size:12px; color:var(--text-muted); text-transform:uppercase;">Saved Wishlist</div>
+                  <div id="dashWishCount" style="font-size:28px; font-weight:800; color:var(--brand-charcoal);">0</div>
+                </div>
+              </div>
+            </div>
+
+            <div id="dashPane_orders" class="dash-pane" style="display:none;">
+              <h2 style="margin:0 0 16px; font-size:20px; color:var(--brand-charcoal);">Order Enquiry History</h2>
+              <div id="dashOrdersList"></div>
+            </div>
+
+            <div id="dashPane_profile" class="dash-pane" style="display:none;">
+              <h2 style="margin:0 0 16px; font-size:20px; color:var(--brand-charcoal);">Profile &amp; Saved Delivery Address</h2>
+              <form id="ccProfileForm">
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px;">
+                  <div class="cc-form-group"><label class="cc-form-label">Full Name</label><input type="text" id="profName" class="cc-input" required /></div>
+                  <div class="cc-form-group"><label class="cc-form-label">Mobile / WhatsApp</label><input type="tel" id="profPhone" class="cc-input" /></div>
+                </div>
+                <div class="cc-form-group"><label class="cc-form-label">Street Address</label><input type="text" id="profAddress" class="cc-input" /></div>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:14px;">
+                  <div class="cc-form-group"><label class="cc-form-label">City</label><input type="text" id="profCity" class="cc-input" /></div>
+                  <div class="cc-form-group"><label class="cc-form-label">State</label><input type="text" id="profState" class="cc-input" /></div>
+                  <div class="cc-form-group"><label class="cc-form-label">Pincode</label><input type="text" id="profPincode" class="cc-input" maxlength="6" /></div>
+                </div>
+                <div class="cc-form-group"><label class="cc-form-label">GSTIN (Optional)</label><input type="text" id="profGstin" class="cc-input" /></div>
+                <button type="submit" class="cc-btn-primary">Save Changes</button>
+                <div id="profSaveMsg" style="font-size:13px; margin-top:10px;"></div>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="ccFooterMount"></div>
+
+  <style>
+    .dash-nav-btn.active { background: var(--brand-green-tint) !important; border-left: 3px solid var(--brand-green) !important; color: var(--brand-green) !important; }
+    @media (max-width: 780px) { #ccDashGrid { grid-template-columns: 1fr !important; } }
+  </style>
+
+  <script src="assets/js/api-config.js?v=3"></script>
+  <script src="assets/js/store-core.js?v=3"></script>
+  <script src="assets/js/account-page.js?v=3"></script>
+</body>
+</html>

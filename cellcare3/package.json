@@ -1,0 +1,16 @@
+{
+  "name": "cellcare-india-ecommerce",
+  "version": "4.0.0",
+  "description": "Cell Care India — Dynamic Full-Stack E-Commerce Platform with Vercel Serverless Functions, Database, Razorpay Checkout & Admin Dashboard",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "node dev-server.js"
+  },
+  "dependencies": {
+    "pg": "^8.13.1"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}

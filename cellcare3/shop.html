@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop EV Parts &amp; Battery Products | Cell Care India</title>
+  <meta name="description" content="Browse live inventory of EV spare parts, Grade-A NMC lithium cells, battery parts, and testing tools at Cell Care India. Order directly on WhatsApp." />
+  <meta name="theme-color" content="#159447" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/storefront.css?v=3" />
+</head>
+<body>
+
+  <div id="ccHeaderMount"></div>
+
+  <div class="cc-breadcrumb-bar">
+    <div class="container">
+      <a href="index.html">Home</a> <span class="cc-breadcrumb-sep">/</span> <span id="ccShopCrumb">All Products</span>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="cc-shop-layout">
+
+      <!-- LEFT FILTER SIDEBAR (DYNAMICALLY POPULATED FROM GOOGLE SHEETS) -->
+      <aside aria-label="Product Filters">
+        <div class="cc-sidebar-box">
+          <h2 class="cc-sidebar-title">Categories</h2>
+          <ul class="cc-cat-list" id="ccSidebarCategories"></ul>
+        </div>
+
+        <div class="cc-sidebar-box">
+          <h2 class="cc-sidebar-title">By Brand</h2>
+          <input type="text" id="ccBrandSearch" class="cc-brand-search" placeholder="Search brand..." />
+          <div class="cc-filter-checklist" id="ccSidebarBrands"></div>
+        </div>
+
+        <div class="cc-sidebar-box">
+          <h2 class="cc-sidebar-title">By Price</h2>
+          <div class="cc-price-slider-wrap">
+            <input type="range" id="ccPriceRange" class="cc-price-range" min="0" max="50000" step="50" value="50000" />
+            <div class="cc-price-readout" id="ccPriceReadout">Price: ₹0 — ₹50,000</div>
+            <button type="button" id="ccApplyPriceBtn" class="cc-btn-primary" style="width:100%;">Apply Filter</button>
+          </div>
+        </div>
+
+        <div class="cc-sidebar-box">
+          <h2 class="cc-sidebar-title">Availability</h2>
+          <label class="cc-check-label">
+            <input type="checkbox" id="ccInStockOnly" />
+            <span>In Stock Only</span>
+          </label>
+        </div>
+      </aside>
+
+      <!-- RIGHT PRODUCT CATALOG -->
+      <section>
+        <div id="ccActiveFilters"></div>
+
+        <div class="cc-shop-toolbar">
+          <div class="cc-shop-found" id="ccProductsFound"><strong>0</strong> Products found</div>
+          <div class="cc-shop-controls">
+            <select id="ccShopSort" class="cc-sort-select" aria-label="Sort products">
+              <option value="default">Default sorting</option>
+              <option value="newest">Sort by latest</option>
+              <option value="price-asc">Sort by price: low to high</option>
+              <option value="price-desc">Sort by price: high to low</option>
+              <option value="name-asc">Sort by name: A to Z</option>
+            </select>
+            <div class="cc-view-toggle">
+              <span>View</span>
+              <button type="button" id="ccViewGrid" class="cc-view-btn active" title="Grid View" aria-label="Grid View"><i class="fas fa-th"></i></button>
+              <button type="button" id="ccViewList" class="cc-view-btn" title="List View" aria-label="List View"><i class="fas fa-list"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cc-shop-grid" id="ccShopGrid"></div>
+        <div class="cc-pagination" id="ccPagination"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="ccFooterMount"></div>
+
+  <script src="assets/js/api-config.js?v=4"></script>
+  <script src="assets/js/store-core.js?v=4"></script>
+  <script src="assets/js/shop.js?v=4"></script>
+</body>
+</html>

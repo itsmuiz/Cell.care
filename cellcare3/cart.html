@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Enquiry Cart | Cell Care India</title>
+  <meta name="theme-color" content="#159447" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/storefront.css?v=3" />
+</head>
+<body>
+
+  <div id="ccHeaderMount"></div>
+
+  <div class="cc-breadcrumb-bar">
+    <div class="container">
+      <a href="index.html">Home</a> <span class="cc-breadcrumb-sep">/</span>
+      <a href="shop.html">Products</a> <span class="cc-breadcrumb-sep">/</span>
+      <span>Enquiry Cart</span>
+    </div>
+  </div>
+
+  <main class="container" style="padding-bottom:60px; min-height:46vh;">
+    <h1 class="cc-page-title">Order Enquiry Cart</h1>
+
+    <div id="ccCartEmptyState" style="display:none; max-width:980px; margin:0 auto;">
+      <div class="cc-empty-notice">
+        <i class="fas fa-shopping-bag" style="color:var(--brand-green); font-size:18px;"></i>
+        <span>Your enquiry cart is currently empty.</span>
+      </div>
+      <a href="shop.html" class="cc-btn-primary" style="padding:12px 26px;">Browse Products</a>
+    </div>
+
+    <div id="ccCartFilledState" style="display:none;">
+      <table class="cc-cart-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="ccCartTableBody"></tbody>
+      </table>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px; align-items:start;">
+        <div style="border:1px solid var(--border-light); padding:22px; border-radius:4px;">
+          <h3 style="margin:0 0 10px; font-size:16px; color:var(--brand-charcoal);">Promo / Wholesale Code</h3>
+          <p style="font-size:12.5px; color:var(--text-muted); margin:0 0 14px;">Available codes: <strong>CELLCARE5</strong> (5% off ₹5,000+), <strong>WELCOME500</strong> (₹500 off ₹10,000+), <strong>B2BBULK</strong> (8% off ₹50,000+)</p>
+          <form id="ccCartCouponForm" style="display:flex; gap:10px;">
+            <input type="text" id="ccCartCouponInput" class="cc-input" placeholder="Enter coupon code" style="height:40px;" />
+            <button type="submit" class="cc-btn-charcoal" style="white-space:nowrap;">Apply</button>
+          </form>
+          <div id="ccCartCouponMsg" style="font-size:13px; margin-top:10px;"></div>
+          <div style="margin-top:18px;">
+            <a href="shop.html" class="cc-btn-outline">&larr; Continue Browsing</a>
+          </div>
+        </div>
+
+        <div style="background:var(--surface-subtle); border:1px solid var(--border-light); padding:24px; border-radius:4px;">
+          <h3 style="margin:0 0 16px; font-size:18px; color:var(--brand-charcoal); border-bottom:1px solid var(--border-light); padding-bottom:10px;">Order Estimate</h3>
+          <div style="display:flex; justify-content:space-between; padding:8px 0; font-size:14px;">
+            <span>Subtotal</span>
+            <strong id="ccCartSub">₹0</strong>
+          </div>
+          <div id="ccCartDiscRow" style="display:none; justify-content:space-between; padding:8px 0; font-size:14px; color:var(--brand-green);">
+            <span>Discount</span>
+            <strong id="ccCartDisc">-₹0</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:8px 0; font-size:13px; color:var(--text-muted); border-bottom:1px solid var(--border-light);">
+            <span>Delivery Charges</span>
+            <span>Confirmed on WhatsApp</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:14px 0 18px; font-size:18px; font-weight:700; color:var(--brand-charcoal);">
+            <span>Estimated Total</span>
+            <span id="ccCartGrandTotal" style="color:var(--brand-green);">₹0</span>
+          </div>
+          <a href="checkout.html" class="cc-btn-primary" style="width:100%; padding:13px;">
+            <i class="fab fa-whatsapp" style="font-size:17px;"></i> Proceed to WhatsApp Order
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="ccFooterMount"></div>
+
+  <script src="assets/js/api-config.js?v=3"></script>
+  <script src="assets/js/store-core.js?v=3"></script>
+  <script src="assets/js/cart-page.js?v=3"></script>
+</body>
+</html>

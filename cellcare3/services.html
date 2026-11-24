@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EV Battery Repair, Practical Training &amp; Startup Consultation | Cell Care India</title>
+  <meta name="description" content="Book an EV &amp; lithium battery repair appointment, join hands-on practical battery repair training, or schedule EV battery startup business consultation with Cell Care India in New Delhi." />
+  <meta name="theme-color" content="#159447" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/storefront.css?v=4" />
+  <style>
+    .svc-hero {
+      background: var(--brand-charcoal);
+      color: var(--brand-white);
+      border-radius: 8px;
+      padding: 40px 32px;
+      margin-bottom: 36px;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 28px;
+      align-items: center;
+      border-bottom: 4px solid var(--brand-green);
+    }
+    .svc-hero-badge {
+      display: inline-block;
+      background: var(--brand-green);
+      color: var(--brand-white);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 3px;
+      margin-bottom: 12px;
+    }
+    .svc-hero h1 {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0 0 12px;
+      color: var(--brand-white);
+    }
+    .svc-hero p {
+      margin: 0 0 22px;
+      font-size: 14.5px;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.7;
+    }
+    .svc-quick-jumps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .svc-jump-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--brand-white);
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .svc-jump-btn:hover {
+      background: var(--brand-green);
+      border-color: var(--brand-green);
+      color: var(--brand-white);
+    }
+    .svc-jump-btn.primary {
+      background: var(--brand-green);
+      border-color: var(--brand-green);
+    }
+
+    /* Overview 3-Card Grid */
+    .svc-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-bottom: 48px;
+    }
+    .svc-card {
+      background: var(--brand-white);
+      border: 1px solid var(--border-color);
+      border-top: 4px solid var(--brand-green);
+      border-radius: 6px;
+      padding: 26px 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+    }
+    .svc-card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
+      background: var(--brand-green-tint);
+      color: var(--brand-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+    .svc-card h2 {
+      font-family: var(--font-heading);
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--brand-charcoal);
+      margin: 0 0 10px;
+    }
+    .svc-card p {
+      font-size: 13.5px;
+      color: var(--text-body);
+      margin: 0 0 16px;
+      line-height: 1.65;
+    }
+    .svc-list {
+      list-style: none;
+      margin: 0 0 20px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--brand-charcoal);
+    }
+    .svc-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .svc-list li i {
+      color: var(--brand-green);
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .svc-card-cta {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* Detailed Sections */
+    .svc-section {
+      background: var(--brand-white);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 32px;
+      margin-bottom: 36px;
+      scroll-margin-top: 72px;
+    }
+    .svc-section-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: start;
+    }
+    .svc-section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--brand-green-tint);
+      color: var(--brand-green);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 5px 12px;
+      border-radius: 3px;
+      margin-bottom: 10px;
+    }
+    .svc-section h2 {
+      font-family: var(--font-heading);
+      font-size: 25px;
+      font-weight: 800;
+      color: var(--brand-charcoal);
+      margin: 0 0 12px;
+    }
+
+    /* Important Notice Box (Yellow/Amber highlight + Charcoal text for maximum visibility) */
+    .svc-notice-box {
+      background: #fffbeb;
+      border: 1px solid #eab308;
+      border-left: 5px solid #eab308;
+      border-radius: 6px;
+      padding: 18px 20px;
+      margin: 18px 0 22px;
+      color: var(--brand-charcoal);
+    }
+    .svc-notice-title {
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--brand-charcoal);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 10px;
+    }
+    .svc-notice-title i {
+      color: #ca8a04;
+      font-size: 17px;
+    }
+    .svc-notice-box ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      font-size: 13.5px;
+      line-height: 1.65;
+    }
+    .svc-notice-box li {
+      margin-bottom: 4px;
+    }
+
+    .svc-form-panel {
+      background: var(--surface-subtle);
+      border: 1px solid var(--border-light);
+      border-top: 4px solid var(--brand-green);
+      border-radius: 6px;
+      padding: 24px;
+    }
+    .svc-form-panel h3 {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--brand-charcoal);
+      margin: 0 0 6px;
+    }
+    .svc-batch-banner {
+      background: var(--brand-white);
+      border: 1px solid var(--brand-green);
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin: 16px 0 20px;
+      font-size: 13.5px;
+    }
+    .svc-batch-banner strong {
+      color: var(--brand-green);
+    }
+    .svc-btn-book {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      background: var(--brand-green);
+      color: var(--brand-white);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 26px;
+      border-radius: 5px;
+      border: 2px solid var(--brand-green);
+      cursor: pointer;
+      text-align: center;
+    }
+    .svc-btn-book:hover {
+      background: var(--brand-green-dark);
+      border-color: var(--brand-green-dark);
+      color: var(--brand-white);
+    }
+
+    @media (max-width: 960px) {
+      .svc-hero,
+      .svc-overview-grid,
+      .svc-section-grid {
+        grid-template-columns: 1fr;
+      }
+      .svc-hero {
+        padding: 28px 20px;
+      }
+      .svc-hero h1 {
+        font-size: 26px;
+      }
+      .svc-section {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="ccHeaderMount"></div>
+
+  <div class="cc-breadcrumb-bar">
+    <div class="container">
+      <a href="index.html">Home</a> <span class="cc-breadcrumb-sep">/</span> <span>Services</span>
+    </div>
+  </div>
+
+  <main class="container" style="padding-bottom:64px;">
+
+    <!-- HERO HEADER -->
+    <section class="svc-hero">
+      <div>
+        <span class="svc-hero-badge">Cell Care India &bull; New Delhi Workshop &amp; Academy</span>
+        <h1>EV Battery Repair, Practical Training &amp; Startup Consultation</h1>
+        <p>
+          Whether you need professional EV lithium battery repair, hands-on technical repair training, or expert guidance to launch your own lithium battery business, our New Delhi engineering team supports you at every step.
+        </p>
+        <div class="svc-quick-jumps">
+          <a href="#battery-repair" class="svc-jump-btn primary"><i class="fas fa-calendar-check"></i> Book Repair Appointment</a>
+          <a href="#repair-training" class="svc-jump-btn"><i class="fas fa-graduation-cap"></i> Practical Training</a>
+          <a href="#startup-consultation" class="svc-jump-btn"><i class="fas fa-briefcase"></i> Startup Consultation</a>
+          <a href="#custom-packs" class="svc-jump-btn"><i class="fas fa-car-battery"></i> Custom Battery Packs</a>
+        </div>
+      </div>
+      <div>
+        <img src="assets/images/hero-bms-banner.jpg" alt="Cell Care India EV Battery Repair and Training Workshop" style="border-radius:6px; border:2px solid rgba(255,255,255,0.18);" />
+      </div>
+    </section>
+
+    <!-- 3 FEATURED SERVICE CARDS OVERVIEW -->
+    <section class="svc-overview-grid" aria-label="Core Services">
+      <!-- Card 1 -->
+      <article class="svc-card">
+        <div class="svc-card-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+        <h2>1. Battery Repair Appointment</h2>
+        <p>Professional workshop diagnostics and repair for electric scooter, E-Rickshaw, and lithium-ion / LiFePO4 battery packs.</p>
+        <ul class="svc-list">
+          <li><i class="fas fa-check-circle"></i> Dead cell &amp; low-range pack recovery</li>
+          <li><i class="fas fa-check-circle"></i> Smart BMS replacement &amp; cell balancing</li>
+          <li><i class="fas fa-check-circle"></i> Connector, fuse &amp; wiring harness repair</li>
+          <li><i class="fas fa-check-circle"></i> Charges &amp; feasibility confirmed after inspection</li>
+        </ul>
+        <div class="svc-card-cta">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfuoGeR5rOQ9bTRkusV0XnfWAcJDcgkZBHKhzxUriYFABgOsA/viewform" target="_blank" rel="noopener noreferrer" class="cc-btn-primary" style="width:100%;">
+            <i class="fas fa-external-link-alt"></i> Book Appointment
+          </a>
+          <a href="#battery-repair" class="cc-btn-outline" style="width:100%;">Read Policy &amp; Details</a>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="svc-card">
+        <div class="svc-card-icon"><i class="fas fa-chalkboard-user"></i></div>
+        <h2>2. Practical Battery Repair Training</h2>
+        <p>100% hands-on workshop training designed for EV mechanics, technicians, and aspiring battery repair specialists.</p>
+        <ul class="svc-list">
+          <li><i class="fas fa-check-circle"></i> EV battery diagnosis &amp; fault troubleshooting</li>
+          <li><i class="fas fa-check-circle"></i> BMS testing, cell IR grading &amp; balancing</li>
+          <li><i class="fas fa-check-circle"></i> Safe pack opening, spot welding &amp; repair</li>
+          <li><i class="fas fa-check-circle"></i> Upcoming New Delhi practical batches</li>
+        </ul>
+        <div class="svc-card-cta">
+          <a href="#repair-training" class="cc-btn-primary" style="width:100%;">
+            <i class="fas fa-user-plus"></i> Course Enquiry &amp; Register
+          </a>
+          <button type="button" class="cc-btn-outline" style="width:100%;" onclick="CellCare.openWhatsApp('Hello Cell Care India! I want details, fees, and upcoming batch dates for Practical Battery Repair Training.')">
+            <i class="fab fa-whatsapp" style="color:var(--brand-green);"></i> WhatsApp Enquiry
+          </button>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="svc-card">
+        <div class="svc-card-icon"><i class="fas fa-rocket"></i></div>
+        <h2>3. Startup Consultation</h2>
+        <p>End-to-end business guidance for entrepreneurs launching a lithium battery assembly unit or EV battery service business.</p>
+        <ul class="svc-list">
+          <li><i class="fas fa-check-circle"></i> Plant setup &amp; machinery selection</li>
+          <li><i class="fas fa-check-circle"></i> Verified Grade-A cell &amp; raw material sourcing</li>
+          <li><i class="fas fa-check-circle"></i> Battery manufacturing basics &amp; QC standards</li>
+          <li><i class="fas fa-check-circle"></i> Costing, pricing &amp; business planning</li>
+        </ul>
+        <div class="svc-card-cta">
+          <a href="#startup-consultation" class="cc-btn-primary" style="width:100%;">
+            <i class="fas fa-handshake"></i> Request Consultation
+          </a>
+          <button type="button" class="cc-btn-outline" style="width:100%;" onclick="CellCare.openWhatsApp('Hello Cell Care India! I would like to book a Startup Consultation for starting a Lithium / EV Battery business.')">
+            <i class="fab fa-whatsapp" style="color:var(--brand-green);"></i> WhatsApp Consultation
+          </button>
+        </div>
+      </article>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 1: BATTERY REPAIR APPOINTMENT (GOOGLE FORM + IMPORTANT NOTICE)
+         ====================================================================== -->
+    <section id="battery-repair" class="svc-section">
+      <div class="svc-section-grid">
+        <div>
+          <span class="svc-section-tag"><i class="fas fa-screwdriver-wrench"></i> Workshop Service 01</span>
+          <h2>EV &amp; Lithium Battery Repair Appointment</h2>
+          <p style="font-size:14.5px; color:var(--text-body); line-height:1.75; margin:0 0 14px;">
+            Experiencing sudden range drop, charging cut-off, BMS failure, or dead cells in your electric scooter, E-Rickshaw, or solar lithium battery? Request a workshop inspection appointment at Cell Care India, New Delhi.
+          </p>
+
+          <ul class="svc-list">
+            <li><i class="fas fa-check"></i> <span><strong>Multi-Brand Diagnostics:</strong> Ola, Ather, Hero Electric, Okinawa, Ampere, TVS iQube, Komaki &amp; custom LiFePO4 / NMC packs.</span></li>
+            <li><i class="fas fa-check"></i> <span><strong>Precision Cell &amp; BMS Testing:</strong> Internal resistance (IR) profiling, active cell rebalancing, Smart BMS upgrade, and spot-welded cell replacement.</span></li>
+            <li><i class="fas fa-check"></i> <span><strong>Transparent Inspection Policy:</strong> Repair feasibility and exact repair charges are confirmed <strong>only after physical inspection</strong> of the battery pack at our workshop.</span></li>
+          </ul>
+
+          <div style="background:var(--surface-subtle); border:1px solid var(--border-light); border-radius:6px; padding:14px 16px; font-size:13.5px; color:var(--brand-charcoal);">
+            <i class="fas fa-map-marker-alt" style="color:var(--brand-green); margin-right:6px;"></i>
+            <strong>Workshop Address:</strong> Shop No. 4, B-32, New Brij Puri, Near Jagatpuri Police Station, New Delhi - 110051 (Mon – Sat: 9:30 AM – 7:00 PM)
+          </div>
+        </div>
+
+        <div class="svc-form-panel">
+          <h3>Request Your Repair Appointment</h3>
+          <p style="font-size:13px; color:var(--text-muted); margin:0 0 14px;">
+            Submit your name, phone number, EV/battery model, issue details, and preferred date using our official appointment request form below.
+          </p>
+
+          <!-- IMPORTANT NOTICE — APPOINTMENT POLICY -->
+          <div class="svc-notice-box" role="alert">
+            <div class="svc-notice-title">
+              <i class="fas fa-exclamation-triangle"></i>
+              <span>Important Notice – Appointment Policy</span>
+            </div>
+            <p style="margin:0 0 6px; font-size:13.5px; font-weight:600;">
+              Customers must call CellCare <strong>at least 1 day before visiting the workshop</strong> to confirm their appointment.
+            </p>
+            <ul>
+              <li>Booking through the Google Form is a <strong>request, not an instant confirmation</strong>.</li>
+              <li>Please call <a href="tel:+918505910581" style="color:var(--brand-green); font-weight:800; text-decoration:underline;">+91 8505910581</a> one day before your planned visit.</li>
+              <li>Visit the workshop only after confirming your slot with our team.</li>
+              <li>Repair feasibility and charges are confirmed after physical inspection.</li>
+            </ul>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfuoGeR5rOQ9bTRkusV0XnfWAcJDcgkZBHKhzxUriYFABgOsA/viewform"
+               target="_blank"
+               rel="noopener noreferrer"
+               id="btnBookRepairAppointment"
+               class="svc-btn-book"
+               style="width:100%;">
+              <i class="fas fa-calendar-check"></i> Book Appointment (Official Form) <i class="fas fa-external-link-alt" style="font-size:12px;"></i>
+            </a>
+
+            <button type="button"
+                    id="btnRepairWaEnquiry"
+                    class="cc-btn-charcoal"
+                    style="width:100%; padding:13px;"
+                    onclick="CellCare.openWhatsApp('Hello Cell Care India! I want to enquire about an EV / Lithium Battery Repair Appointment.\n\nVehicle / Battery Model:\nIssue Description:\nPreferred Date:\n\nI understand repair feasibility & charges are confirmed after inspection and I will call +91 8505910581 at least 1 day before visiting.')">
+              <i class="fab fa-whatsapp" style="font-size:17px; color:var(--brand-green);"></i> Enquire on WhatsApp (+91 85059 10581)
+            </button>
+
+            <a href="tel:+918505910581" class="cc-btn-outline" style="width:100%; padding:11px;">
+              <i class="fas fa-phone-alt" style="color:var(--brand-green);"></i> Call Workshop to Confirm Slot: +91 85059 10581
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 2: PRACTICAL BATTERY REPAIR TRAINING
+         ====================================================================== -->
+    <section id="repair-training" class="svc-section">
+      <div class="svc-section-grid">
+        <div>
+          <span class="svc-section-tag"><i class="fas fa-graduation-cap"></i> Academy Service 02</span>
+          <h2>Practical Lithium Battery Repair Training</h2>
+          <p style="font-size:14.5px; color:var(--text-body); line-height:1.75; margin:0 0 14px;">
+            Learn real-world EV &amp; lithium battery repair directly inside our active New Delhi workshop. No theory-only slides — get hands-on bench experience diagnosing live battery packs with professional tools.
+          </p>
+
+          <h3 style="font-size:15.5px; font-weight:700; color:var(--brand-charcoal); margin:16px 0 10px;">What You Will Practice Hands-On:</h3>
+          <ul class="svc-list">
+            <li><i class="fas fa-check-circle"></i> <span><strong>EV Battery Diagnosis &amp; Troubleshooting:</strong> Identifying weak series groups, voltage sag, moisture corrosion, and charger faults.</span></li>
+            <li><i class="fas fa-check-circle"></i> <span><strong>BMS Testing &amp; Replacement:</strong> Wiring 13S/16S/20S hardware &amp; Smart Bluetooth BMS boards, MOSFET &amp; thermal sensor checks.</span></li>
+            <li><i class="fas fa-check-circle"></i> <span><strong>Cell Testing &amp; IR Grading:</strong> Measuring internal resistance (RC-3563 / industrial testers), capacity grading, and IR matching.</span></li>
+            <li><i class="fas fa-check-circle"></i> <span><strong>Safe Battery Opening &amp; Repair Practices:</strong> Safe enclosure teardown, nickel strip removal, pulse spot welding, insulation &amp; resealing.</span></li>
+            <li><i class="fas fa-check-circle"></i> <span><strong>Safety &amp; Real Pack Case Studies:</strong> Working on LiFePO4 &amp; NMC scooter and E-Rickshaw battery packs safely.</span></li>
+          </ul>
+
+          <div class="svc-batch-banner">
+            <div><strong><i class="far fa-calendar-alt" style="margin-right:6px;"></i>Upcoming Batches &amp; Availability:</strong></div>
+            <div style="margin-top:6px; color:var(--text-body);">
+              New practical batches start every month in New Delhi (Weekday &amp; Weekend options available). Seats are limited per batch so every participant gets direct workbench tool access.
+            </div>
+          </div>
+
+          <button type="button"
+                  class="cc-btn-charcoal"
+                  style="padding:12px 22px;"
+                  onclick="CellCare.openWhatsApp('Hello Cell Care India! I would like to enquire about upcoming batches, fees, and syllabus for Practical Lithium Battery Repair Training.')">
+            <i class="fab fa-whatsapp" style="font-size:17px; color:var(--brand-green);"></i> WhatsApp Training Desk (+91 85059 10581)
+          </button>
+        </div>
+
+        <!-- Course Enquiry & Registration Form -->
+        <div class="svc-form-panel">
+          <h3>Course Enquiry &amp; Registration</h3>
+          <p style="font-size:13px; color:var(--text-muted); margin:0 0 16px;">
+            Submit your details below to receive the upcoming batch schedule &amp; fee structure directly on WhatsApp.
+          </p>
+
+          <form id="trainingEnquiryForm" novalidate>
+            <div class="cc-form-group">
+              <label class="cc-form-label" for="trName">Full Name *</label>
+              <input type="text" id="trName" class="cc-input" required placeholder="e.g. Rahul Verma" />
+            </div>
+            <div class="cc-form-group">
+              <label class="cc-form-label" for="trPhone">10-Digit Mobile / WhatsApp Number *</label>
+              <input type="tel" id="trPhone" class="cc-input" required maxlength="10" placeholder="9876543210" />
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+              <div class="cc-form-group">
+                <label class="cc-form-label" for="trCity">City / State *</label>
+                <input type="text" id="trCity" class="cc-input" required placeholder="e.g. Delhi / Jaipur" />
+              </div>
+              <div class="cc-form-group">
+                <label class="cc-form-label" for="trBatch">Preferred Batch</label>
+                <select id="trBatch" class="cc-input">
+                  <option value="Next Upcoming Batch">Next Upcoming Batch</option>
+                  <option value="Weekday Practical Batch">Weekday Practical Batch</option>
+                  <option value="Weekend Practical Batch">Weekend Practical Batch</option>
+                </select>
+              </div>
+            </div>
+            <div class="cc-form-group">
+              <label class="cc-form-label" for="trExp">Current Background</label>
+              <select id="trExp" class="cc-input">
+                <option value="Beginner / New Learner">Beginner / New Learner</option>
+                <option value="EV Scooter / E-Rickshaw Mechanic">EV Scooter / E-Rickshaw Mechanic</option>
+                <option value="Electronics / Inverter Technician">Electronics / Inverter Technician</option>
+                <option value="Workshop / Business Owner">Workshop / Business Owner</option>
+              </select>
+            </div>
+            <div class="cc-form-group">
+              <label class="cc-form-label" for="trNotes">Questions / Specific Topics (Optional)</label>
+              <textarea id="trNotes" class="cc-input" rows="3" placeholder="Any specific battery type or timing preference..."></textarea>
+            </div>
+
+            <button type="submit" id="trSubmitBtn" class="cc-btn-primary" style="width:100%; padding:13px;">
+              <i class="fab fa-whatsapp" style="font-size:17px;"></i> Register / Enquire on WhatsApp
+            </button>
+            <div id="trFormStatus" style="margin-top:12px; font-size:13px;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 3: STARTUP CONSULTATION (LITHIUM & EV BATTERY BUSINESS)
+         ====================================================================== -->
+    <section id="startup-consultation" class="svc-section">
+      <div class="svc-section-grid">
+        <div>
+          <span class="svc-section-tag"><i class="fas fa-briefcase"></i> Advisory Service 03</span>
+          <h2>Lithium &amp; EV Battery Startup Consultation</h2>
+          <p style="font-size:14.5px; color:var(--text-body); line-height:1.75; margin:0 0 14px;">
+            Planning to launch a lithium battery assembly unit, EV battery refurbishment center, or battery spare parts distribution business in India? Avoid costly machinery mistakes and low-grade cell suppliers with practical industry guidance from Cell Care India.
+          </p>
+
+          <h3 style="font-size:15.5px; font-weight:700; color:var(--brand-charcoal); margin:16px 0 10px;">Consultation Scope Includes:</h3>
+          <ul class="svc-list">
+            <li><i class="fas fa-check-circle"></i> <span><strong>Business Setup Guidance:</strong> Workshop layout, electrical/safety setup, staffing, and compliance roadmap.</span></li>
+            <li><i class="fas fa-check-circle"></i> <span><strong>Machinery &amp; Equipment Selection:</strong> Right-sized spot welders, IR grading testers, charge-discharge cyclers, and BMS test rigs for your budget.</span></li>
+            <li><i class="fas fa-check-circle"></i> <span><strong>Raw Material &amp; Cell Sourcing:</strong> Identifying authentic Grade-A NMC/LiFePO4 cells, BMS boards, enclosures, nickel strips, and connectors.</span></li>
+            <li><i class="fas fa-check-circle"></i> <span><strong>Battery Manufacturing Basics:</strong> Pack design calculations, cell matching workflows, QC testing checklists, and warranty management.</span></li>
+            <li><i class="fas fa-check-circle"></i> <span><strong>Business Planning &amp; Costing:</strong> BOM cost analysis, B2B/dealer margin structures, and target product line selection.</span></li>
+          </ul>
+
+          <button type="button"
+                  class="cc-btn-charcoal"
+                  style="padding:12px 22px; margin-top:8px;"
+                  onclick="CellCare.openWhatsApp('Hello Cell Care India! I would like to schedule a Startup Consultation for launching a Lithium / EV Battery business.')">
+            <i class="fab fa-whatsapp" style="font-size:17px; color:var(--brand-green);"></i> WhatsApp Consultation (+91 85059 10581)
+          </button>
+        </div>
+
+        <!-- Startup Consultation Enquiry Form -->
+        <div class="svc-form-panel">
+          <h3>Request Startup Consultation</h3>
+          <p style="font-size:13px; color:var(--text-muted); margin:0 0 16px;">
+            Share your business stage and goals below. Your enquiry will be logged and opened on WhatsApp with our consultation desk.
+          </p>
+
+          <form id="startupConsultForm" novalidate>
+            <div class="cc-form-group">
+              <label class="cc-form-label" for="scName">Your Name *</label>
+              <input type="text" id="scName" class="cc-input" required placeholder="Full Name" />
+            </div>
+            <div class="cc-form-group">
+              <label class="cc-form-label" for="scPhone">10-Digit Mobile / WhatsApp Number *</label>
+              <input type="tel" id="scPhone" class="cc-input" required maxlength="10" placeholder="9876543210" />
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+              <div class="cc-form-group">
+                <label class="cc-form-label" for="scCity">City / State *</label>
+                <input type="text" id="scCity" class="cc-input" required placeholder="e.g. Pune, Maharashtra" />
+              </div>
+              <div class="cc-form-group">
+                <label class="cc-form-label" for="scFocus">Business Focus</label>
+                <select id="scFocus" class="cc-input">
+                  <option value="Lithium Battery Pack Assembly Unit">Battery Pack Assembly Unit</option>
+                  <option value="EV Battery Repair & Service Center">EV Battery Repair &amp; Service Center</option>
+                  <option value="EV Parts & Battery Trading / Dealership">EV Parts &amp; Battery Dealership</option>
+                  <option value="Complete Turnkey Setup">Complete Turnkey Setup</option>
+                </select>
+              </div>
+            </div>
+            <div class="cc-form-group">
+              <label class="cc-form-label" for="scBudget">Planned Investment Stage</label>
+              <select id="scBudget" class="cc-input">
+                <option value="Exploring / Initial Planning">Exploring / Initial Planning</option>
+                <option value="₹2 Lakh – ₹5 Lakh (Repair / Small Unit)">₹2 Lakh – ₹5 Lakh (Repair / Small Unit)</option>
+                <option value="₹5 Lakh – ₹15 Lakh (Semi-Automated Assembly)">₹5 Lakh – ₹15 Lakh (Assembly Setup)</option>
+                <option value="₹15 Lakh+ (Commercial Scale)">₹15 Lakh+ (Commercial Scale)</option>
+              </select>
+            </div>
+            <div class="cc-form-group">
+              <label class="cc-form-label" for="scDetails">Tell Us About Your Plan *</label>
+              <textarea id="scDetails" class="cc-input" rows="3" required placeholder="Share your target products (2W, 3W, Solar), timeline, or specific questions..."></textarea>
+            </div>
+
+            <button type="submit" id="scSubmitBtn" class="cc-btn-primary" style="width:100%; padding:13px;">
+              <i class="fab fa-whatsapp" style="font-size:17px;"></i> Send Consultation Enquiry on WhatsApp
+            </button>
+            <div id="scFormStatus" style="margin-top:12px; font-size:13px;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         EXISTING SERVICES PRESERVED: CUSTOM BATTERY PACKS & SPEC ESTIMATOR
+         ====================================================================== -->
+    <section id="custom-packs" class="svc-section" style="margin-bottom:0;">
+      <div style="text-align:center; max-width:700px; margin:0 auto 28px;">
+        <span class="svc-section-tag"><i class="fas fa-car-battery"></i> Additional Engineering &amp; B2B Services</span>
+        <h2>Custom Battery Manufacturing &amp; Wholesale Supply</h2>
+        <p style="font-size:14px; color:var(--text-muted); margin:0;">
+          Alongside repair, training, and startup consultation, we manufacture bespoke lithium battery packs and supply wholesale cells &amp; EV parts pan-India.
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:18px; margin-bottom:32px;">
+        <div style="background:var(--surface-subtle); border:1px solid var(--border-light); padding:20px; border-radius:4px;">
+          <i class="fas fa-car-battery" style="font-size:24px; color:var(--brand-green); margin-bottom:10px;"></i>
+          <h3 style="margin:0 0 6px; font-size:16px; color:var(--brand-charcoal);">Custom EV Battery Packs</h3>
+          <p style="margin:0; font-size:13px; color:var(--text-body);">Bespoke 36V, 48V, 60V &amp; 72V LiFePO4 / NMC packs built to your enclosure dimensions.</p>
+        </div>
+        <div style="background:var(--surface-subtle); border:1px solid var(--border-light); padding:20px; border-radius:4px;">
+          <i class="fas fa-microchip" style="font-size:24px; color:var(--brand-green); margin-bottom:10px;"></i>
+          <h3 style="margin:0 0 6px; font-size:16px; color:var(--brand-charcoal);">IR Grading &amp; BMS Diagnostics</h3>
+          <p style="margin:0; font-size:13px; color:var(--text-body);">Precision internal-resistance cell sorting, balancing, and Smart BMS testing.</p>
+        </div>
+        <div style="background:var(--surface-subtle); border:1px solid var(--border-light); padding:20px; border-radius:4px;">
+          <i class="fas fa-boxes-stacked" style="font-size:24px; color:var(--brand-green); margin-bottom:10px;"></i>
+          <h3 style="margin:0 0 6px; font-size:16px; color:var(--brand-charcoal);">B2B Wholesale Supply</h3>
+          <p style="margin:0; font-size:13px; color:var(--text-body);">Direct dealer pricing on Grade-A NMC cells, Ola/Ather spares, and testing tools with GST invoice.</p>
+        </div>
+      </div>
+
+      <!-- Existing Interactive Custom Pack Spec Estimator -->
+      <div style="max-width:780px; margin:0 auto; background:var(--surface-subtle); border:1px solid var(--border-light); border-top:4px solid var(--brand-green); border-radius:6px; padding:26px;">
+        <h3 style="margin:0 0 6px; font-size:19px; color:var(--brand-charcoal);">Custom Lithium Pack Spec Estimator</h3>
+        <p style="margin:0 0 18px; font-size:13.5px; color:var(--text-muted);">Configure your required voltage, capacity, and chemistry to request a direct factory quote on WhatsApp.</p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:14px; margin-bottom:16px;">
+          <div class="cc-form-group" style="margin-bottom:0;">
+            <label class="cc-form-label" for="calcVolt">System Voltage</label>
+            <select id="calcVolt" class="cc-input">
+              <option value="48">48V (51.2V LiFePO4)</option>
+              <option value="60" selected>60V (64V LiFePO4)</option>
+              <option value="72">72V (High Speed EV)</option>
+              <option value="12">12.8V (Solar / Inverter)</option>
+            </select>
+          </div>
+          <div class="cc-form-group" style="margin-bottom:0;">
+            <label class="cc-form-label" for="calcAh">Capacity (Ah)</label>
+            <select id="calcAh" class="cc-input">
+              <option value="24">24 Ah</option>
+              <option value="30" selected>30 Ah</option>
+              <option value="40">40 Ah</option>
+              <option value="60">60 Ah</option>
+              <option value="100">100 Ah</option>
+            </select>
+          </div>
+          <div class="cc-form-group" style="margin-bottom:0;">
+            <label class="cc-form-label" for="calcChem">Chemistry</label>
+            <select id="calcChem" class="cc-input">
+              <option value="LiFePO4">LiFePO4 (3000+ Cycles)</option>
+              <option value="NMC">Lithium NMC (Compact)</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="calcOutput" style="background:var(--brand-white); border:1px solid var(--brand-green); padding:14px 16px; border-radius:4px; margin-bottom:16px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; font-size:14px; color:var(--brand-charcoal);"></div>
+
+        <button type="button" id="calcWaBtn" class="cc-btn-primary" style="width:100%; padding:13px;">
+          <i class="fab fa-whatsapp" style="font-size:17px;"></i> Request Factory Quote on WhatsApp
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="ccFooterMount"></div>
+
+  <script src="assets/js/api-config.js?v=4"></script>
+  <script src="assets/js/store-core.js?v=4"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      function cleanPhone(val) {
+        return String(val || "").replace(/\D/g, "").slice(-10);
+      }
+
+      async function logInquiryToBackend(payload) {
+        try {
+          const res = await fetch("/api/admin", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ action: "submit_inquiry", ...payload })
+          });
+          return await res.json();
+        } catch {
+          return { ok: false };
+        }
+      }
+
+      // 1. Practical Battery Repair Training Form
+      document.getElementById("trainingEnquiryForm")?.addEventListener("submit", async e => {
+        e.preventDefault();
+        const status = document.getElementById("trFormStatus");
+        const btn = document.getElementById("trSubmitBtn");
+        const name = document.getElementById("trName").value.trim();
+        const phone = cleanPhone(document.getElementById("trPhone").value);
+        const city = document.getElementById("trCity").value.trim();
+        const batch = document.getElementById("trBatch").value;
+        const exp = document.getElementById("trExp").value;
+        const notes = document.getElementById("trNotes").value.trim();
+
+        if (name.length < 2) {
+          status.innerHTML = `<span style="color:var(--brand-charcoal); font-weight:700;">Please enter your full name.</span>`;
+          return;
+        }
+        if (phone.length !== 10) {
+          status.innerHTML = `<span style="color:var(--brand-charcoal); font-weight:700;">Please enter a valid 10-digit mobile / WhatsApp number.</span>`;
+          return;
+        }
+        if (!city) {
+          status.innerHTML = `<span style="color:var(--brand-charcoal); font-weight:700;">Please enter your city / state.</span>`;
+          return;
+        }
+
+        btn.disabled = true;
+        const summaryMsg = `Batch: ${batch} | Background: ${exp} | City: ${city}${notes ? ` | Notes: ${notes}` : ""}`;
+        const logged = await logInquiryToBackend({
+          name,
+          phone,
+          category: "Practical Battery Repair Training",
+          message: summaryMsg
+        });
+
+        const waLines = [
+          "Hello Cell Care India,",
+          "I want to enquire & register for Practical Battery Repair Training:",
+          "",
+          `Name: ${name}`,
+          `Phone: ${phone}`,
+          `City / State: ${city}`,
+          `Preferred Batch: ${batch}`,
+          `Background: ${exp}`,
+          ...(notes ? [`Notes: ${notes}`] : []),
+          "",
+          "Please share upcoming batch dates, duration, and fee details."
+        ];
+        const waUrl = window.CellCare.openWhatsApp(waLines.join("\n"));
+
+        status.innerHTML = `
+          <div style="background:var(--brand-green-tint); border:1px solid var(--brand-green); padding:12px 14px; border-radius:4px; color:var(--brand-charcoal);">
+            <strong>Enquiry logged${logged.inquiry?.id ? ` (${window.CellCare.esc(logged.inquiry.id)})` : ""} &amp; WhatsApp opened!</strong>
+            Please send the prefilled WhatsApp message to receive batch dates.
+            <a href="${window.CellCare.esc(waUrl)}" target="_blank" rel="noopener" style="color:var(--brand-green); font-weight:700; text-decoration:underline; margin-left:6px;">Open WhatsApp again</a>
+          </div>
+        `;
+        e.target.reset();
+        btn.disabled = false;
+      });
+
+      // 2. Startup Consultation Enquiry Form
+      document.getElementById("startupConsultForm")?.addEventListener("submit", async e => {
+        e.preventDefault();
+        const status = document.getElementById("scFormStatus");
+        const btn = document.getElementById("scSubmitBtn");
+        const name = document.getElementById("scName").value.trim();
+        const phone = cleanPhone(document.getElementById("scPhone").value);
+        const city = document.getElementById("scCity").value.trim();
+        const focus = document.getElementById("scFocus").value;
+        const budget = document.getElementById("scBudget").value;
+        const details = document.getElementById("scDetails").value.trim();
+
+        if (name.length < 2) {
+          status.innerHTML = `<span style="color:var(--brand-charcoal); font-weight:700;">Please enter your name.</span>`;
+          return;
+        }
+        if (phone.length !== 10) {
+          status.innerHTML = `<span style="color:var(--brand-charcoal); font-weight:700;">Please enter a valid 10-digit mobile / WhatsApp number.</span>`;
+          return;
+        }
+        if (!city || !details) {
+          status.innerHTML = `<span style="color:var(--brand-charcoal); font-weight:700;">Please enter your city and brief business plan.</span>`;
+          return;
+        }
+
+        btn.disabled = true;
+        const summaryMsg = `Focus: ${focus} | Budget: ${budget} | City: ${city} | Plan: ${details}`;
+        const logged = await logInquiryToBackend({
+          name,
+          phone,
+          category: "Startup Consultation",
+          message: summaryMsg
+        });
+
+        const waLines = [
+          "Hello Cell Care India,",
+          "I would like to book a Lithium / EV Battery Startup Consultation:",
+          "",
+          `Name: ${name}`,
+          `Phone: ${phone}`,
+          `City / State: ${city}`,
+          `Business Focus: ${focus}`,
+          `Investment Stage: ${budget}`,
+          `Plan / Questions: ${details}`,
+          "",
+          "Please share consultation availability and next steps."
+        ];
+        const waUrl = window.CellCare.openWhatsApp(waLines.join("\n"));
+
+        status.innerHTML = `
+          <div style="background:var(--brand-green-tint); border:1px solid var(--brand-green); padding:12px 14px; border-radius:4px; color:var(--brand-charcoal);">
+            <strong>Consultation enquiry logged${logged.inquiry?.id ? ` (${window.CellCare.esc(logged.inquiry.id)})` : ""} &amp; WhatsApp opened!</strong>
+            Send the prefilled message to connect with our consultant.
+            <a href="${window.CellCare.esc(waUrl)}" target="_blank" rel="noopener" style="color:var(--brand-green); font-weight:700; text-decoration:underline; margin-left:6px;">Open WhatsApp again</a>
+          </div>
+        `;
+        e.target.reset();
+        btn.disabled = false;
+      });
+
+      // 3. Existing Custom Battery Pack Spec Estimator
+      function updateCalc() {
+        const v = Number(document.getElementById("calcVolt").value);
+        const ah = Number(document.getElementById("calcAh").value);
+        const chem = document.getElementById("calcChem").value;
+        const kwh = ((v * ah) / 1000).toFixed(2);
+        const rangeKm = v === 12 ? "Home / Solar Backup" : `${Math.round(kwh * 40)}–${Math.round(kwh * 46)} km / charge`;
+        document.getElementById("calcOutput").innerHTML = `
+          <div><strong>Energy:</strong> ${kwh} kWh</div>
+          <div><strong>Est. Range:</strong> ${rangeKm}</div>
+          <div><strong>Chemistry:</strong> <span style="color:var(--brand-green); font-weight:700;">${chem}</span></div>
+        `;
+      }
+      ["calcVolt", "calcAh", "calcChem"].forEach(id => document.getElementById(id)?.addEventListener("change", updateCalc));
+      document.getElementById("calcWaBtn")?.addEventListener("click", () => {
+        const v = document.getElementById("calcVolt").value;
+        const ah = document.getElementById("calcAh").value;
+        const chem = document.getElementById("calcChem").value;
+        window.CellCare.openWhatsApp(`Hello Cell Care India! Please share a factory quotation for a custom ${v}V ${ah}Ah ${chem} battery pack.`);
+      });
+      document.addEventListener("DOMContentLoaded", updateCalc);
+    })();
+  </script>
+</body>
+</html>
